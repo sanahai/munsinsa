@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INKSAFE 국제 표준 교육원</title>
+    <style>
+        :root {
+            --primary-color: #1a2a40;
+            --accent-color: #c9a66b;
+            --text-dark: #333;
+            --bg-light: #f9f9f9;
+        }
+        body { font-family: 'Pretendard', sans-serif; margin: 0; color: var(--text-dark); line-height: 1.6; }
+        header { background: white; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 1000; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        nav { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .logo { font-weight: bold; font-size: 1.5rem; color: var(--primary-color); }
+        .nav-menu a { margin-left: 20px; text-decoration: none; color: #555; font-size: 0.95rem; }
+
+        /* Hero Section */
+        .hero { background: var(--primary-color); color: white; padding: 100px 0; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
+        .cta-btn { background: var(--accent-color); color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+
+        /* Program Section */
+        .section { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .card { background: white; padding: 30px; border: 1px solid #eee; border-radius: 10px; text-align: center; transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .price { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); margin: 20px 0; }
+
+        /* Cafe Community Section (외부연결) */
+        .cafe-section { background: #03c75a; color: white; padding: 60px 0; text-align: center; }
+        .cafe-box { background: rgba(255,255,255,0.1); padding: 40px; border-radius: 15px; border: 1px dashed white; }
+        .cafe-btn { background: white; color: #03c75a; padding: 12px 30px; text-decoration: none; border-radius: 30px; font-weight: bold; display: inline-block; margin-top: 20px; }
+
+        footer { background: #222; color: #888; padding: 40px 0; font-size: 0.8rem; text-align: center; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">INKSAFE 국제 표준 교육원</div>
+            <div class="nav-menu">
+                <a href="#about">소개</a>
+                <a href="#programs">교육과정</a>
+                <a href="#exam">시험대비</a>
+                <a href="#community">커뮤니티</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>여기가 뭔지 5초 안에 알게 하는 공간 [cite: 1]</h1>
+        <p>반영구·SMP 실무 교육 + 문신사 자격시험 대비 플랫폼 [cite: 1]</p>
+        <a href="#programs" class="cta-btn">수강 흐름 한 눈에 보기</a>
+    </div>
+</section>
+
+<section id="programs" class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>매출의 심장, 교육과정 [cite: 2]</h2>
+            <p>초보부터 경력자까지, 목적에 맞는 최적의 코스</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>3개월 집중 과정 (A)</h3>
+                <p>입문자 대상 실무 집중 [cite: 7]</p>
+                <div class="price">330만원 [cite: 9]</div>
+                <small>샵 연계 실습 포함 [cite: 2]</small>
+            </div>
+            <div class="card">
+                <h3>6개월 통합 과정 (B)</h3>
+                <p>반영구+SMP+자격시험 [cite: 3]</p>
+                <div class="price">660만원 [cite: 9]</div>
+                <small>시험 대비 요소 포함 [cite: 3]</small>
+            </div>
+            <div class="card">
+                <h3>2개월 경력자 과정 (C)</h3>
+                <p>시험 및 특례 대비 중심 [cite: 4]</p>
+                <div class="price">220만원 [cite: 9]</div>
+                <small>기록·포트폴리오 정리 [cite: 4]</small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="community" class="cafe-section">
+    <div class="container">
+        <div class="cafe-box">
+            <h2>수강생 전용 네이버 카페</h2>
+            <p>실시간 제도/법 업데이트 및 교육 자료실 운영</p>
+            <p>동료 수강생들과의 정보 공유와 질문 답변을 카페에서 확인하세요.</p>
+            <a href="https://cafe.naver.com/YOUR_CAFE_ID" target="_blank" class="cafe-btn">네이버 카페 바로가기</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 INKSAFE 국제 표준 교육원. All Rights Reserved.</p>
+        <p>본 플랫폼의 교육 이수 확인서는 법제화 대응을 위한 기록용이며 국가 자격증이 아닙니다. </p>
+    </div>
+</footer>
+
+</body>
+</html>
