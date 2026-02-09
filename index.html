@@ -3,41 +3,696 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INKSAFE 국제 표준 교육원</title>
+    <title>INKSAFE 국제 표준 교육원 | 반영구·SMP·문신사 자격 전문 교육</title>
+    <meta name="description" content="법제화 대비 반영구화장, SMP, 문신사 자격시험 전문 교육기관. 3개월부터 6개월 과정까지 맞춤형 커리큘럼 제공.">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+        
         :root {
             --primary-color: #1a2a40;
+            --secondary-color: #2c4563;
             --accent-color: #c9a66b;
-            --text-dark: #333;
+            --accent-hover: #b8945a;
+            --success-color: #03c75a;
+            --text-dark: #222;
+            --text-medium: #555;
+            --text-light: #888;
             --bg-light: #f9f9f9;
+            --border-light: #e5e5e5;
         }
-        body { font-family: 'Pretendard', sans-serif; margin: 0; color: var(--text-dark); line-height: 1.6; }
-        header { background: white; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 1000; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        nav { display: flex; justify-content: space-between; align-items: center; height: 70px; }
-        .logo { font-weight: bold; font-size: 1.5rem; color: var(--primary-color); }
-        .nav-menu a { margin-left: 20px; text-decoration: none; color: #555; font-size: 0.95rem; }
-
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        
+        .logo {
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 35px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-medium);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--accent-color);
+        }
+        
         /* Hero Section */
-        .hero { background: var(--primary-color); color: white; padding: 100px 0; text-align: center; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
-        .hero p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
-        .cta-btn { background: var(--accent-color); color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: bold; }
-
-        /* Program Section */
-        .section { padding: 80px 0; }
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-        .card { background: white; padding: 30px; border: 1px solid #eee; border-radius: 10px; text-align: center; transition: 0.3s; }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .price { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); margin: 20px 0; }
-
-        /* Cafe Community Section (외부연결) */
-        .cafe-section { background: #03c75a; color: white; padding: 60px 0; text-align: center; }
-        .cafe-box { background: rgba(255,255,255,0.1); padding: 40px; border-radius: 15px; border: 1px dashed white; }
-        .cafe-btn { background: white; color: #03c75a; padding: 12px 30px; text-decoration: none; border-radius: 30px; font-weight: bold; display: inline-block; margin-top: 20px; }
-
-        footer { background: #222; color: #888; padding: 40px 0; font-size: 0.8rem; text-align: center; }
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="800" cy="200" r="300" fill="rgba(201,166,107,0.1)"/><circle cx="900" cy="600" r="200" fill="rgba(201,166,107,0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 25px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+        
+        .hero h1 span {
+            color: var(--accent-color);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .cta-btn-primary {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        .cta-btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(201,166,107,0.3);
+        }
+        
+        .cta-btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .cta-btn-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: white;
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-item p {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+        }
+        
+        /* Why Choose Section */
+        .why-choose {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 1px solid var(--border-light);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-color), #d4b276);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .feature-card p {
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+        
+        /* Programs Section */
+        .programs {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .program-card {
+            background: white;
+            border: 2px solid var(--border-light);
+            border-radius: 20px;
+            padding: 45px 35px;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .program-card.featured {
+            border-color: var(--accent-color);
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(201,166,107,0.2);
+        }
+        
+        .program-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-color);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+        
+        .program-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .program-card h3 {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .program-duration {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+        
+        .program-description {
+            color: var(--text-medium);
+            margin-bottom: 25px;
+            line-height: 1.7;
+            min-height: 80px;
+        }
+        
+        .price {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--accent-color);
+            margin: 25px 0;
+        }
+        
+        .price-note {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+        
+        .program-features {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        
+        .program-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--bg-light);
+            color: var(--text-medium);
+            font-size: 0.95rem;
+        }
+        
+        .program-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .program-features li::before {
+            content: '✓';
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .program-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        
+        .program-btn:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+        
+        /* Curriculum Section */
+        .curriculum {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+        
+        .curriculum-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .step-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.3rem;
+            margin: 0 auto 20px;
+        }
+        
+        .step-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .step-card p {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* Cafe Community Section */
+        .cafe-section {
+            background: linear-gradient(135deg, #03c75a 0%, #02b350 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cafe-box {
+            background: rgba(255,255,255,0.1);
+            padding: 50px 40px;
+            border-radius: 20px;
+            border: 2px dashed rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cafe-box h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        
+        .cafe-box p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+        
+        .cafe-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .cafe-feature {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .cafe-feature h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .cafe-feature p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+        
+        .cafe-btn {
+            background: white;
+            color: #03c75a;
+            padding: 18px 45px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 25px;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+        }
+        
+        .cafe-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: var(--bg-light);
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+        }
+        
+        .faq-question {
+            padding: 25px 30px;
+            font-weight: 700;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: white;
+        }
+        
+        .faq-answer {
+            padding: 0 30px 25px;
+            color: var(--text-medium);
+            line-height: 1.8;
+        }
+        
+        /* Contact CTA */
+        .contact-cta {
+            background: var(--primary-color);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .contact-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        
+        .contact-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .contact-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .contact-card p {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--accent-color);
+            margin: 0;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: var(--text-light);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-about h3 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        
+        .footer-about p {
+            line-height: 1.8;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links h4 {
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .stats-grid,
+            .features-grid,
+            .programs-grid,
+            .curriculum-steps,
+            .cafe-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .program-card.featured {
+                transform: scale(1);
+            }
+        }
+        
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body>
@@ -45,12 +700,14 @@
 <header>
     <div class="container">
         <nav>
-            <div class="logo">INKSAFE 국제 표준 교육원</div>
+            <div class="logo">INKSAFE <span>국제표준교육원</span></div>
             <div class="nav-menu">
-                <a href="#about">소개</a>
+                <a href="#about">교육원 소개</a>
                 <a href="#programs">교육과정</a>
-                <a href="#exam">시험대비</a>
+                <a href="#curriculum">커리큘럼</a>
                 <a href="#community">커뮤니티</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">문의하기</a>
             </div>
         </nav>
     </div>
@@ -58,36 +715,168 @@
 
 <section class="hero">
     <div class="container">
-        <h1>여기가 뭔지 5초 안에 알게 하는 공간 [cite: 1]</h1>
-        <p>반영구·SMP 실무 교육 + 문신사 자격시험 대비 플랫폼 [cite: 1]</p>
-        <a href="#programs" class="cta-btn">수강 흐름 한 눈에 보기</a>
+        <div class="hero-content">
+            <div class="hero-badge">🏆 법제화 대응 전문 교육기관</div>
+            <h1>5초 안에 알 수 있는<br><span>반영구·SMP 전문 교육</span></h1>
+            <p>초보부터 경력자까지, 문신사 자격시험 준비부터 실무 역량까지<br>체계적인 커리큘럼으로 여러분의 성공을 지원합니다.</p>
+            <div class="cta-buttons">
+                <a href="#programs" class="cta-btn cta-btn-primary">교육과정 살펴보기</a>
+                <a href="#contact" class="cta-btn cta-btn-secondary">상담 신청</a>
+            </div>
+        </div>
     </div>
 </section>
 
-<section id="programs" class="section">
+<section class="stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>누적 수강생</p>
+            </div>
+            <div class="stat-item">
+                <h3>98%</h3>
+                <p>교육 만족도</p>
+            </div>
+            <div class="stat-item">
+                <h3>20+</h3>
+                <p>제휴 샵 실습</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>커뮤니티 지원</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="why-choose">
     <div class="container">
         <div class="section-title">
-            <h2>매출의 심장, 교육과정 [cite: 2]</h2>
+            <h2>왜 INKSAFE를 선택해야 할까요?</h2>
+            <p>차별화된 교육 시스템과 실무 중심 커리큘럼</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>법제화 대응 커리큘럼</h3>
+                <p>문신사 자격시험과 특례 제도를 완벽 대비하는 체계적인 교육 과정. 최신 법령과 제도 변경사항을 실시간 업데이트합니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💼</div>
+                <h3>실전 샵 연계 실습</h3>
+                <p>20개 이상의 제휴 샵에서 실제 고객을 대상으로 한 실습 기회 제공. 이론을 넘어 실무 경험을 쌓을 수 있습니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>맞춤형 포트폴리오</h3>
+                <p>개인별 작업 기록과 포트폴리오를 체계적으로 관리하여 자격 신청과 취업에 필요한 자료를 완벽하게 준비합니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>소수정예 교육</h3>
+                <p>한 클래스 최대 8명 이내의 소수정예 시스템으로 강사의 1:1 밀착 피드백과 개인별 맞춤 지도를 받을 수 있습니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>평생 재수강 제도</h3>
+                <p>수료 후에도 필요한 과목을 무료로 재수강할 수 있어 지속적인 실력 향상이 가능합니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3>온·오프라인 통합</h3>
+                <p>온라인 이론 강의와 오프라인 실습을 결합한 하이브리드 교육으로 시간과 장소의 제약 없이 학습할 수 있습니다.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="programs" class="programs">
+    <div class="container">
+        <div class="section-title">
+            <h2>당신에게 맞는 교육 과정을 선택하세요</h2>
             <p>초보부터 경력자까지, 목적에 맞는 최적의 코스</p>
         </div>
-        <div class="grid">
-            <div class="card">
-                <h3>3개월 집중 과정 (A)</h3>
-                <p>입문자 대상 실무 집중 [cite: 7]</p>
-                <div class="price">330만원 [cite: 9]</div>
-                <small>샵 연계 실습 포함 [cite: 2]</small>
+        <div class="programs-grid">
+            <div class="program-card">
+                <h3>3개월 집중 과정</h3>
+                <p class="program-duration">입문자 대상 | 주 3회 수업</p>
+                <p class="program-description">반영구화장 또는 SMP의 기초부터 실전까지 단기간에 집중 학습하는 과정</p>
+                <div class="price">330만원</div>
+                <p class="price-note">재료비 별도 / 분할 납부 가능</p>
+                <ul class="program-features">
+                    <li>반영구 또는 SMP 기초 이론</li>
+                    <li>실습 모델 20회 이상 보장</li>
+                    <li>제휴 샵 현장 실습</li>
+                    <li>위생 및 안전 교육</li>
+                    <li>수료증 발급</li>
+                </ul>
+                <a href="#contact" class="program-btn">상담 신청하기</a>
             </div>
-            <div class="card">
-                <h3>6개월 통합 과정 (B)</h3>
-                <p>반영구+SMP+자격시험 [cite: 3]</p>
-                <div class="price">660만원 [cite: 9]</div>
-                <small>시험 대비 요소 포함 [cite: 3]</small>
+            
+            <div class="program-card featured">
+                <div class="program-badge">🌟 인기</div>
+                <h3>6개월 통합 과정</h3>
+                <p class="program-duration">심화 통합 | 주 4회 수업</p>
+                <p class="program-description">반영구+SMP 전 분야 마스터 및 자격시험 완벽 대비</p>
+                <div class="price">660만원</div>
+                <p class="price-note">전 재료 포함 / 최대 12개월 분할</p>
+                <ul class="program-features">
+                    <li>반영구 + SMP 통합 교육</li>
+                    <li>문신사 자격시험 대비 특강</li>
+                    <li>실습 모델 50회 이상</li>
+                    <li>포트폴리오 제작 지원</li>
+                    <li>취업 연계 프로그램</li>
+                    <li>평생 재수강 혜택</li>
+                </ul>
+                <a href="#contact" class="program-btn">상담 신청하기</a>
             </div>
-            <div class="card">
-                <h3>2개월 경력자 과정 (C)</h3>
-                <p>시험 및 특례 대비 중심 [cite: 4]</p>
-                <div class="price">220만원 [cite: 9]</div>
-                <small>기록·포트폴리오 정리 [cite: 4]</small>
+            
+            <div class="program-card">
+                <h3>2개월 경력자 과정</h3>
+                <p class="program-duration">경력자 대상 | 주 2회 수업</p>
+                <p class="program-description">시험 대비 및 특례 신청을 위한 기록 정리 중심 과정</p>
+                <div class="price">220만원</div>
+                <p class="price-note">재료비 없음 / 일시 납부 시 할인</p>
+                <ul class="program-features">
+                    <li>자격시험 핵심 정리</li>
+                    <li>포트폴리오 전문 관리</li>
+                    <li>경력 증빙 자료 작성</li>
+                    <li>특례 신청 컨설팅</li>
+                    <li>모의시험 및 첨삭</li>
+                </ul>
+                <a href="#contact" class="program-btn">상담 신청하기</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="curriculum" class="curriculum">
+    <div class="container">
+        <div class="section-title">
+            <h2>체계적인 4단계 학습 시스템</h2>
+            <p>이론부터 실전까지, 단계별 완성도 높은 커리큘럼</p>
+        </div>
+        <div class="curriculum-steps">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h4>기초 이론 교육</h4>
+                <p>피부학, 색채학, 위생관리 등 필수 이론 학습 및 도구 사용법 숙지</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h4>인조피부 실습</h4>
+                <p>다양한 기법을 인조피부에 반복 연습하며 기본 테크닉 완성</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h4>모델 실전 실습</h4>
+                <p>실제 모델 대상 시술 경험 축적 및 강사 1:1 피드백</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h4>시험 대비 & 취업</h4>
+                <p>자격시험 준비, 포트폴리오 완성, 취업 또는 창업 지원</p>
             </div>
         </div>
     </div>
@@ -96,18 +885,151 @@
 <section id="community" class="cafe-section">
     <div class="container">
         <div class="cafe-box">
-            <h2>수강생 전용 네이버 카페</h2>
-            <p>실시간 제도/법 업데이트 및 교육 자료실 운영</p>
-            <p>동료 수강생들과의 정보 공유와 질문 답변을 카페에서 확인하세요.</p>
-            <a href="https://cafe.naver.com/munsinsa" target="_blank" class="cafe-btn">네이버 카페 바로가기</a>
+            <h2>💬 수강생 전용 네이버 카페</h2>
+            <p>실시간 법령 업데이트와 동료들과의 정보 공유</p>
+            <p>혼자가 아닌 함께 성장하는 커뮤니티에 참여하세요</p>
+            
+            <div class="cafe-features">
+                <div class="cafe-feature">
+                    <h4>📖 자료실</h4>
+                    <p>교육 자료 및 참고 영상</p>
+                </div>
+                <div class="cafe-feature">
+                    <h4>💡 Q&A</h4>
+                    <p>24시간 질문답변</p>
+                </div>
+                <div class="cafe-feature">
+                    <h4>🔔 공지사항</h4>
+                    <p>법령 및 시험 정보</p>
+                </div>
+            </div>
+            
+            <a href="https://cafe.naver.com/munsinsa" target="_blank" class="cafe-btn">"문신사 아카데미" 네이버 카페 바로가기</a>
+        </div>
+    </div>
+</section>
+
+<section id="faq" class="faq">
+    <div class="container">
+        <div class="section-title">
+            <h2>자주 묻는 질문</h2>
+            <p>궁금하신 내용을 확인해보세요</p>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">
+                    Q. 전혀 경험이 없는데도 수강할 수 있나요? 
+                </div>
+                <div class="faq-answer">
+                    A. 네, 가능합니다. 3개월 집중 과정과 6개월 통합 과정은 전혀 경험이 없는 입문자를 대상으로 설계되었습니다. 기초 이론부터 차근차근 배울 수 있으며, 소수정예 시스템으로 개인별 맞춤 지도를 받을 수 있습니다.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Q. 문신사 자격시험은 언제 시행되나요?
+                </div>
+                <div class="faq-answer">
+                    A. 문신사 자격시험 일정은 보건복지부 및 관련 기관의 공지에 따라 결정됩니다. 저희 교육원에서는 네이버 카페와 문자를 통해 시험 일정 및 관련 법령 변경사항을 실시간으로 안내해드립니다.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Q. 교육비 분할 납부가 가능한가요?
+                </div>
+                <div class="faq-answer">
+                    A. 네, 가능합니다. 6개월 통합과정의 경우 최대 12개월까지 무이자 분할 납부가 가능하며, 3개월 과정은 최대 6개월 분할이 가능합니다. 자세한 내용은 상담 시 안내해드립니다.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Q. 수료 후 취업 지원은 어떻게 이루어지나요?
+                </div>
+                <div class="faq-answer">
+                    A. 제휴 샵 20곳 이상과의 네트워크를 통해 취업 연계를 지원하며, 포트폴리오 제작, 면접 코칭, 이력서 작성 등 취업 전 과정을 도와드립니다. 또한 창업을 희망하시는 분들께는 샵 운영 노하우도 공유해드립니다.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Q. 온라인으로만 수강할 수 있나요?
+                </div>
+                <div class="faq-answer">
+                    A. 이론 강의는 온라인으로 수강 가능하지만, 실습은 반드시 오프라인에서 진행됩니다. 실제 시술 기술을 익히고 강사의 직접적인 피드백을 받기 위해서는 오프라인 실습이 필수적입니다.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact-cta">
+    <div class="container">
+        <h2>지금 바로 시작하세요</h2>
+        <p>전문가와의 1:1 상담으로 당신에게 맞는 과정을 찾아드립니다</p>
+        <div class="contact-methods">
+            <div class="contact-card">
+                <h4>📞 전화 상담</h4>
+                <p>1588-XXXX</p>
+            </div>
+            <div class="contact-card">
+                <h4>💬 카카오톡</h4>
+                <p>@inksafe_edu</p>
+            </div>
+            <div class="contact-card">
+                <h4>📧 이메일</h4>
+                <p>info@inksafe.co.kr</p>
+            </div>
         </div>
     </div>
 </section>
 
 <footer>
     <div class="container">
-        <p>&copy; 2026 INKSAFE 국제 표준 교육원. All Rights Reserved.</p>
-        <p>본 플랫폼의 교육 이수 확인서는 법제화 대응을 위한 기록용이며 국가 자격증이 아닙니다. </p>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>INKSAFE 국제표준교육원</h3>
+                <p>
+                    법제화 시대를 선도하는 반영구화장 및 SMP 전문 교육기관입니다.<br>
+                    체계적인 커리큘럼과 실무 중심 교육으로 전문가를 양성합니다.<br><br>
+                    <strong>사업자등록번호:</strong> XXX-XX-XXXXX<br>
+                    <strong>대표자:</strong> 홍길동<br>
+                    <strong>주소:</strong> 서울특별시 강남구 테헤란로 XXX
+                </p>
+            </div>
+            <div class="footer-links">
+                <h4>교육과정</h4>
+                <ul>
+                    <li><a href="#programs">3개월 집중 과정</a></li>
+                    <li><a href="#programs">6개월 통합 과정</a></li>
+                    <li><a href="#programs">2개월 경력자 과정</a></li>
+                    <li><a href="#curriculum">커리큘럼</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>지원</h4>
+                <ul>
+                    <li><a href="#faq">자주 묻는 질문</a></li>
+                    <li><a href="#community">커뮤니티</a></li>
+                    <li><a href="#contact">상담 신청</a></li>
+                    <li><a href="#">수강후기</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>법적 고지</h4>
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">환불 규정</a></li>
+                    <li><a href="#">교육원 소개</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 INKSAFE 국제표준교육원. All Rights Reserved.</p>
+            <p>본 교육원의 교육 이수 확인서는 법제화 대응을 위한 기록용이며, 국가 공인 자격증이 아닙니다.</p>
+        </div>
     </div>
 </footer>
 
